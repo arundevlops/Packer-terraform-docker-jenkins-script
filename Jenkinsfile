@@ -12,7 +12,7 @@ pipeline {
 				
 		stage('Deploy EC2 Server') {
           steps {
-		        sh 'terraform init'
+		        sh 'terraform init -backend=false'
             sh 'terraform plan'
             sh 'terraform apply --auto-approve'
             }
