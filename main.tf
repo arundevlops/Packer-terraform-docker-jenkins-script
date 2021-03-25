@@ -4,7 +4,7 @@ provider "aws" {
 
 /*terraform {
   backend "s3" {
-    bucket = "sreeterraformbucket"
+    bucket = "<Bucket-Name>"
     key    = "pipeline.tfstate"
     region = "us-east-1"
   }
@@ -30,6 +30,6 @@ resource "aws_instance" "web-1" {
     tags = {
         Name = "Server-1"
         Env = "Prod"
-        Owner = "Sree"
+        Owner = "Arun"
     }
 }
