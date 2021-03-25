@@ -24,11 +24,11 @@ pipeline {
             }
         }
 
-        */stage('Push Image to Docker Hub') {
+        /*stage('Push Image to Docker Hub') {
           steps {
            sh    'docker push <dockerreponame>:${BUILD_NUMBER}'
            }
-        }/*
+        }*/
 
         stage('Deploy to Docker Host') {
           steps {
