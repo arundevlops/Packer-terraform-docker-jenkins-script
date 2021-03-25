@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build Docker Image') {
           steps {
-            sh 'docker build -t DockerImage-arundevlops-${BUILD_NUMBER} .'
+            sh 'docker build -t dockerImage-arundevlops-${BUILD_NUMBER} .'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
           steps {
 		    sh 'sleep 30s'
             sh    'docker -H tcp://10.0.0.11:2375 stop prodwebapp1 || true'
-            sh    'docker -H tcp://10.0.0.11:2375 run --rm -dit --name prodwebapp1 --hostname prodwebapp1 -p 8000:80 DockerImage-arundevlops-${BUILD_NUMBER}'
+            sh    'docker -H tcp://10.0.0.11:2375 run --rm -dit --name prodwebapp1 --hostname prodwebapp1 -p 8000:80 dockerImage-arundevlops-${BUILD_NUMBER}'
             }
         }
 
